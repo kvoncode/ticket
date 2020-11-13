@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from "styled-components";
+
 import { useSelector, useDispatch } from "react-redux";
 import {
   ordinaryAdded,
@@ -9,15 +11,23 @@ import {
   selectGolden,
 } from "./ticketSlice";
 
+import { TicketsStatus } from "./TicketsStatus";
+
+const StyledTicketPage = styled.div`
+  background-color: #461b1b;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const TicketPage = () => {
-  const ordinary = useSelector(selectOrdinary);
-  const golden = useSelector(selectGolden);
   const dispatch = useDispatch();
 
   return (
-    <div>
-      Ordinary Tickets: {ordinary}
-      Golden Tickets: {golden}
-    </div>
+    <StyledTicketPage>
+      <TicketsStatus></TicketsStatus>
+    </StyledTicketPage>
   );
 };

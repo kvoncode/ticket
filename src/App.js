@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import { TicketPage } from "./features/ticket/TicketPage";
 import "./App.css";
 
