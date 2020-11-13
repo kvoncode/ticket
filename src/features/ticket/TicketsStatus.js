@@ -6,7 +6,7 @@ import { selectOrdinary, selectGolden } from "./ticketSlice";
 
 const StyledTicketsStatus = styled.div`
   position: fixed;
-  bottom: 5rem;
+  bottom: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,14 +20,16 @@ const StyledTicketStatus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
   background-color: #461b1b;
   padding: 0.1rem;
 `;
 
 const StyledTicketNumber = styled.div`
   color: #ff9900;
-  padding: 1rem;
+  padding-right: 1rem;
+  padding-left: 0.8rem;
+  font-family: "Rozha One", serif;
+  font-size: 1rem;
 `;
 
 export const TicketsStatus = () => {
