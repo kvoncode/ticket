@@ -12,8 +12,9 @@ import {
 } from "./ticketSlice";
 
 import { TicketsStatus } from "./TicketsStatus";
+import { TicketsControls } from "./TicketsControls";
 
-const StyledTicketPage = styled.div`
+const StyledTicketsPage = styled.div`
   background-color: #461b1b;
   height: 100vh;
   width: 100vw;
@@ -22,12 +23,13 @@ const StyledTicketPage = styled.div`
   align-items: center;
 `;
 
-export const TicketPage = () => {
+export const TicketsPage = () => {
   const dispatch = useDispatch();
 
   return (
-    <StyledTicketPage>
+    <StyledTicketsPage>
+      <TicketsControls></TicketsControls>
       <TicketsStatus></TicketsStatus>
-    </StyledTicketPage>
+    </StyledTicketsPage>
   );
 };

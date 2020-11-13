@@ -1,12 +1,12 @@
 import React from "react";
-import { TicketPage } from "./features/ticket/TicketPage";
+import { TicketsPage } from "./features/ticket/TicketsPage";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <TicketPage />
+        <TicketsPage />
       </header>
     </div>
   );
