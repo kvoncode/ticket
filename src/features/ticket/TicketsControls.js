@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   border: 0;
   font-size: 2rem;
   font-family: "Rozha One", serif;
-  color: white;
+  color: ${(props) => props.theme.secondary};
 `;
 
 const StyledSpendButton = styled.button`
@@ -26,7 +26,7 @@ const StyledSpendButton = styled.button`
   border: 0;
   font-size: 2rem;
   font-family: "Rozha One", serif;
-  color: white;
+  color: ${props => props.theme.secondary};
 `;
 
 const Ordinary = () => {

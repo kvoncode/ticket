@@ -20,12 +20,12 @@ const StyledTicketStatus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #461b1b;
+  background-color: ${props => props.theme.primary};
   padding: 0.1rem;
 `;
 
 const StyledTicketNumber = styled.div`
-  color: #ff9900;
+  color: ${(props) => props.theme.tertiary};
   padding-right: 1rem;
   padding-left: 0.8rem;
   font-family: "Rozha One", serif;
