@@ -26,11 +26,20 @@ const StyledSpendButton = styled.button`
   border: 0;
   font-size: 2rem;
   font-family: "Rozha One", serif;
-  color: ${props => props.theme.secondary};
+  color: ${(props) => props.theme.secondary};
 `;
 
 const Ordinary = () => {
   const dispatch = useDispatch();
+
+  let cashRegisterSound = new Audio("/cash.mp3");
+
+  const handleClick = () => {
+    cashRegisterSound.pause();
+    cashRegisterSound.currentTime = 0;
+    cashRegisterSound.play();
+    dispatch(ordinaryAdded());
+  };
 
   return (
     <>
@@ -38,13 +47,7 @@ const Ordinary = () => {
         src="ticket.svg"
         alt="Ordinary Tickets"
       ></StyledTicketImg>
-      <StyledButton
-        onClick={() => {
-          dispatch(ordinaryAdded());
-        }}
-      >
-        {"+"}
-      </StyledButton>
+      <StyledButton onClick={handleClick}>{"+"}</StyledButton>
       <StyledButton
         onClick={() => {
           dispatch(ordinarySubtracted());
