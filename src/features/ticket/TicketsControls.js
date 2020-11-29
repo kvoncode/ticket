@@ -21,6 +21,14 @@ const StyledButton = styled.button`
   color: white;
 `;
 
+const StyledSpendButton = styled.button`
+  background-color: rgba(51, 170, 51, 0);
+  border: 0;
+  font-size: 2rem;
+  font-family: "Rozha One", serif;
+  color: white;
+`;
+
 const Ordinary = () => {
   const dispatch = useDispatch();
 
