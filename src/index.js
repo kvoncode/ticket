@@ -8,9 +8,9 @@ import { ThemeProvider } from "styled-components";
 import "normalize.css";
 
 const theme = {
-  primary: "#dedede",
+  primary: "#e8e8e8",
   secondary: "red",
-  tertiary: "#ff9900",
+  tertiary: "#ba4e00",
 };
 
 ReactDOM.render(
