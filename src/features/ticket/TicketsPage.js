@@ -5,7 +5,7 @@ import { TicketsStatus } from "./TicketsStatus";
 import { TicketsControls } from "./TicketsControls";
 
 const StyledTicketsPage = styled.div`
-  background-color: #461b1b;
+  background-color: ${props => props.theme.primary};
   height: 100vh;
   width: 100vw;
   display: flex;
