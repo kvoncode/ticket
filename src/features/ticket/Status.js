@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectOrdinary, selectGolden } from "./ticketSlice";
 
-const StyledTicketsStatus = styled.div`
+const SStatus = styled.div`
   position: fixed;
   bottom: 4rem;
   display: flex;
@@ -12,11 +12,11 @@ const StyledTicketsStatus = styled.div`
   align-items: center;
 `;
 
-const StyledTicketImg = styled.img`
+const STicketImg = styled.img`
   width: 5rem;
 `;
 
-const StyledTicketStatus = styled.div`
+const STicketStatus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,7 @@ const StyledTicketStatus = styled.div`
   padding: 0.1rem;
 `;
 
-const StyledTicketNumber = styled.div`
+const SNumber = styled.div`
   color: ${(props) => props.theme.tertiary};
   padding-right: 1rem;
   padding-left: 0.8rem;
@@ -36,22 +36,22 @@ export const Status = () => {
   const ordinary = useSelector(selectOrdinary);
   const golden = useSelector(selectGolden);
   return (
-    <StyledTicketsStatus>
-      <StyledTicketStatus>
-        <StyledTicketImg
+    <SStatus>
+      <STicketStatus>
+        <STicketImg
           src="ticket.svg"
           alt="Ordinary Tickets"
-        ></StyledTicketImg>
-        <StyledTicketNumber>{ordinary}</StyledTicketNumber>
-      </StyledTicketStatus>
+        ></STicketImg>
+        <SNumber>{ordinary}</SNumber>
+      </STicketStatus>
 
-      <StyledTicketStatus>
-        <StyledTicketImg
+      <STicketStatus>
+        <STicketImg
           src="gticket.svg"
           alt="Golden Tickets"
-        ></StyledTicketImg>
-        <StyledTicketNumber>{golden}</StyledTicketNumber>
-      </StyledTicketStatus>
-    </StyledTicketsStatus>
+        ></STicketImg>
+        <SNumber>{golden}</SNumber>
+      </STicketStatus>
+    </SStatus>
   );
 };

@@ -42,26 +42,25 @@ const CollectSpend = (props) => {
 const Ordinary = () => {
   const dispatch = useDispatch();
 
-  let cashRegisterSound = new Audio("/cash.mp3");
+  const cashRegisterSound = new Audio("/cash.mp3");
 
-  const handleClick = () => {
+  const collectOrdinary = () => {
     cashRegisterSound.pause();
     cashRegisterSound.currentTime = 0;
     cashRegisterSound.play();
     dispatch(ordinaryAdded());
   };
 
+  const spendOrdinary = () => {
+    dispatch(ordinarySubtracted());
+  };
+
   return (
     <>
-      <STicketImg
-        src="ticket.svg"
-        alt="Ordinary Tickets"
-      ></STicketImg>
+      <STicketImg src="ticket.svg" alt="Ordinary Tickets"></STicketImg>
       <CollectSpend
-        collect={handleClick}
-        spend={() => {
-          dispatch(ordinarySubtracted());
-        }}
+        collect={collectOrdinary}
+        spend={spendOrdinary}
       ></CollectSpend>
     </>
   );
@@ -70,23 +69,18 @@ const Ordinary = () => {
 const Golden = () => {
   const dispatch = useDispatch();
 
+  const collectGolden = () => {
+    dispatch(goldenAdded());
+  };
+
+  const spendGolden = () => {
+    dispatch(goldenSubtracted());
+  };
+
   return (
     <>
       <STicketImg src="gticket.svg" alt="Golden Tickets"></STicketImg>
-      <SButton
-        onClick={() => {
-          dispatch(goldenAdded());
-        }}
-      >
-        {"+"}
-      </SButton>
-      <SButton
-        onClick={() => {
-          dispatch(goldenSubtracted());
-        }}
-      >
-        {"-"}
-      </SButton>
+      <CollectSpend collect={collectGolden} spend={spendGolden}></CollectSpend>
     </>
   );
 };
