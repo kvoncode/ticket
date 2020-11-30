@@ -9,7 +9,7 @@ import "normalize.css";
 
 const theme = {
   primary: "#fff8e6",
-  secondary: "red",
+  secondary: "#dbdbdb",
   tertiary: "#c28d00",
 };
 

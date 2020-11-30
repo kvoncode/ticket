@@ -10,15 +10,25 @@ import {
 } from "./ticketSlice";
 
 const STicketImg = styled.img`
-  width: 15rem;
+  width: 12rem;
 `;
 
 const SButton = styled.button`
+  margin: 0.5rem;
   background-color: rgba(51, 170, 51, 0);
-  border: 0;
-  font-size: 2rem;
+  border: 2px solid ${(props) => props.theme.secondary};
+  border-radius: 1rem;
+  font-size: 1.5rem;
   font-family: "Rozha One", serif;
   color: ${(props) => props.theme.tertiary};
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+  }
 `;
 
 const SContainer = styled.div`
@@ -64,8 +74,8 @@ const CollectSpend = (props) => {
 
   return (
     <SCollectSpend>
-      <SButton onClick={collectSFX}>{"+"}</SButton>
-      <SButton onClick={spendSFX}>{"-"}</SButton>
+      <SButton onClick={collectSFX}>{"COLLECT"}</SButton>
+      <SButton onClick={spendSFX}>{"SPEND"}</SButton>
     </SCollectSpend>
   );
 };
