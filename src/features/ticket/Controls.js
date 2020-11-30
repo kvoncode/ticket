@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
+
+import anime from "animejs";
 
 import {
   ordinaryAdded,
@@ -59,6 +61,36 @@ const soundEffect = () => {
   cashRegisterSound.play();
 };
 
+const AnimatedButton = (props) => {
+  const targetRef = React.createRef();
+
+  const timelineParams = { direction: "alternate", duration: 90 };
+
+  const timeline = anime.timeline(timelineParams);
+
+  useEffect(() => {
+    console.log(targetRef);
+
+    timeline.add({
+      targets: targetRef.current,
+      scale: 0.9,
+    });
+  }, [targetRef, timeline]);
+
+  const animate = () => {
+    timeline.restart();
+  };
+
+  const handleClick = (e) => {
+    animate();
+    if (props.onClick) {
+      props.onClick();
+    }
+  };
+
+  return <SButton ref={targetRef} {...props} onClick={handleClick}></SButton>;
+};
+
 const CollectSpend = (props) => {
   const { collect, spend } = props;
 
@@ -74,8 +106,8 @@ const CollectSpend = (props) => {
 
   return (
     <SCollectSpend>
-      <SButton onClick={collectSFX}>{"COLLECT"}</SButton>
-      <SButton onClick={spendSFX}>{"SPEND"}</SButton>
+      <AnimatedButton onClick={collectSFX}>{"COLLECT"}</AnimatedButton>
+      <AnimatedButton onClick={spendSFX}>{"SPEND"}</AnimatedButton>
     </SCollectSpend>
   );
 };
