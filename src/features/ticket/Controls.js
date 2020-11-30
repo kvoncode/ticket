@@ -18,14 +18,16 @@ const STicketImg = styled.img`
 const SButton = styled.button`
   margin: 0.5rem;
   background-color: rgba(51, 170, 51, 0);
-  border: 2px solid ${(props) => props.theme.secondary};
+  border: 0 solid ${(props) => props.theme.secondary};
   border-radius: 1rem;
   font-size: 1.5rem;
   font-family: "Rozha One", serif;
   color: ${(props) => props.theme.tertiary};
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   &:hover {
     cursor: pointer;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.48);
   }
 
   &:focus {
