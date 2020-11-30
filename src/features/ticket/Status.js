@@ -32,7 +32,7 @@ const StyledTicketNumber = styled.div`
   font-size: 1rem;
 `;
 
-export const TicketsStatus = () => {
+export const Status = () => {
   const ordinary = useSelector(selectOrdinary);
   const golden = useSelector(selectGolden);
   return (

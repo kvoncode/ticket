@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import { TicketsStatus } from "./TicketsStatus";
-import { TicketsControls } from "./TicketsControls";
+import { Status } from "./Status";
+import { Controls } from "./Controls";
 
-const StyledTicketsPage = styled.div`
+const sTicketsPage = styled.div`
   background-color: ${props => props.theme.primary};
   height: 100vh;
   width: 100vw;
@@ -15,9 +15,9 @@ const StyledTicketsPage = styled.div`
 
 export const TicketsPage = () => {
   return (
-    <StyledTicketsPage>
-      <TicketsControls></TicketsControls>
-      <TicketsStatus></TicketsStatus>
-    </StyledTicketsPage>
+    <sTicketsPage>
+      <Controls></Controls>
+      <Status></Status>
+    </sTicketsPage>
   );
 };

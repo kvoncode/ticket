@@ -83,7 +83,7 @@ const Golden = () => {
   );
 };
 
-export const TicketsControls = () => {
+export const Controls = () => {
   return (
     <div>
       <Ordinary></Ordinary>
