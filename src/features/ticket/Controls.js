@@ -64,7 +64,7 @@ const soundEffect = () => {
 const AnimatedButton = (props) => {
   const targetRef = React.createRef();
 
-  const timelineParams = { direction: "alternate", duration: 90 };
+  const timelineParams = { direction: "alternate", duration: 90, autoplay: false };
 
   const timeline = anime.timeline(timelineParams);
 
