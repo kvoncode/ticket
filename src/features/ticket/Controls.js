@@ -29,13 +29,32 @@ const StyledSpendButton = styled.button`
   color: ${(props) => props.theme.secondary};
 `;
 
+const SContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const SControls = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SCollectSpend = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const CollectSpend = (props) => {
   const { collect, spend } = props;
   return (
-    <>
+    <SCollectSpend>
       <SButton onClick={collect}>{"+"}</SButton>
       <SButton onClick={spend}>{"-"}</SButton>
-    </>
+    </SCollectSpend>
   );
 };
 
@@ -56,13 +75,13 @@ const Ordinary = () => {
   };
 
   return (
-    <>
+    <SContainer>
       <STicketImg src="ticket.svg" alt="Ordinary Tickets"></STicketImg>
       <CollectSpend
         collect={collectOrdinary}
         spend={spendOrdinary}
       ></CollectSpend>
-    </>
+    </SContainer>
   );
 };
 
@@ -78,18 +97,18 @@ const Golden = () => {
   };
 
   return (
-    <>
+    <SContainer>
       <STicketImg src="gticket.svg" alt="Golden Tickets"></STicketImg>
       <CollectSpend collect={collectGolden} spend={spendGolden}></CollectSpend>
-    </>
+    </SContainer>
   );
 };
 
 export const Controls = () => {
   return (
-    <div>
+    <SControls>
       <Ordinary></Ordinary>
       <Golden></Golden>
-    </div>
+    </SControls>
   );
 };
