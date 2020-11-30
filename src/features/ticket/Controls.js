@@ -21,19 +21,12 @@ const SButton = styled.button`
   color: ${(props) => props.theme.tertiary};
 `;
 
-const StyledSpendButton = styled.button`
-  background-color: rgba(51, 170, 51, 0);
-  border: 0;
-  font-size: 2rem;
-  font-family: "Rozha One", serif;
-  color: ${(props) => props.theme.secondary};
-`;
-
 const SContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1rem;
 `;
 
 const SControls = styled.div`
