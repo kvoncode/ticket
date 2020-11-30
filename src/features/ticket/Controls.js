@@ -9,11 +9,11 @@ import {
   goldenSubtracted,
 } from "./ticketSlice";
 
-const StyledTicketImg = styled.img`
+const STicketImg = styled.img`
   width: 15rem;
 `;
 
-const StyledButton = styled.button`
+const SButton = styled.button`
   background-color: rgba(51, 170, 51, 0);
   border: 0;
   font-size: 2rem;
@@ -29,6 +29,16 @@ const StyledSpendButton = styled.button`
   color: ${(props) => props.theme.secondary};
 `;
 
+const CollectSpend = (props) => {
+  const { collect, spend } = props;
+  return (
+    <>
+      <SButton onClick={collect}>{"+"}</SButton>
+      <SButton onClick={spend}>{"-"}</SButton>
+    </>
+  );
+};
+
 const Ordinary = () => {
   const dispatch = useDispatch();
 
@@ -43,18 +53,16 @@ const Ordinary = () => {
 
   return (
     <>
-      <StyledTicketImg
+      <STicketImg
         src="ticket.svg"
         alt="Ordinary Tickets"
-      ></StyledTicketImg>
-      <StyledButton onClick={handleClick}>{"+"}</StyledButton>
-      <StyledButton
-        onClick={() => {
+      ></STicketImg>
+      <CollectSpend
+        collect={handleClick}
+        spend={() => {
           dispatch(ordinarySubtracted());
         }}
-      >
-        {"-"}
-      </StyledButton>
+      ></CollectSpend>
     </>
   );
 };
@@ -64,21 +72,21 @@ const Golden = () => {
 
   return (
     <>
-      <StyledTicketImg src="gticket.svg" alt="Golden Tickets"></StyledTicketImg>
-      <StyledButton
+      <STicketImg src="gticket.svg" alt="Golden Tickets"></STicketImg>
+      <SButton
         onClick={() => {
           dispatch(goldenAdded());
         }}
       >
         {"+"}
-      </StyledButton>
-      <StyledButton
+      </SButton>
+      <SButton
         onClick={() => {
           dispatch(goldenSubtracted());
         }}
       >
         {"-"}
-      </StyledButton>
+      </SButton>
     </>
   );
 };

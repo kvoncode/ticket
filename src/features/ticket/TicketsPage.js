@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Status } from "./Status";
 import { Controls } from "./Controls";
 
-const sTicketsPage = styled.div`
+const STicketsPage = styled.div`
   background-color: ${props => props.theme.primary};
   height: 100vh;
   width: 100vw;
@@ -15,9 +15,9 @@ const sTicketsPage = styled.div`
 
 export const TicketsPage = () => {
   return (
-    <sTicketsPage>
+    <STicketsPage>
       <Controls></Controls>
       <Status></Status>
-    </sTicketsPage>
+    </STicketsPage>
   );
 };
