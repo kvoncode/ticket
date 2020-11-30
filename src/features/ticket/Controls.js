@@ -48,12 +48,31 @@ const SCollectSpend = styled.div`
   align-items: center;
 `;
 
+const cashRegisterSound = new Audio("/cash.mp3");
+
+const soundEffect = () => {
+  cashRegisterSound.pause();
+  cashRegisterSound.currentTime = 0;
+  cashRegisterSound.play();
+};
+
 const CollectSpend = (props) => {
   const { collect, spend } = props;
+
+  const collectSFX = () => {
+    soundEffect();
+    collect();
+  };
+
+  const spendSFX = () => {
+    soundEffect();
+    spend();
+  };
+
   return (
     <SCollectSpend>
-      <SButton onClick={collect}>{"+"}</SButton>
-      <SButton onClick={spend}>{"-"}</SButton>
+      <SButton onClick={collectSFX}>{"+"}</SButton>
+      <SButton onClick={spendSFX}>{"-"}</SButton>
     </SCollectSpend>
   );
 };
@@ -61,12 +80,7 @@ const CollectSpend = (props) => {
 const Ordinary = () => {
   const dispatch = useDispatch();
 
-  const cashRegisterSound = new Audio("/cash.mp3");
-
   const collectOrdinary = () => {
-    cashRegisterSound.pause();
-    cashRegisterSound.currentTime = 0;
-    cashRegisterSound.play();
     dispatch(ordinaryAdded());
   };
 
