@@ -14,7 +14,13 @@ const SPageTemplate = styled.div`
   flex-wrap: wrap;
 `;
 
-const SNavbar = styled.nav``;
+const SNavbar = styled.nav`
+  position: fixed;
+  min-width: 19rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 function App() {
   return (
