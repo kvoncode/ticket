@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { selectOrdinary, selectGolden } from "./ticketSlice";
 
 const SStatus = styled.div`
+  width: 100vw;
   position: fixed;
   bottom: 4rem;
   display: flex;
@@ -20,7 +21,7 @@ const STicketStatus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.primary};
+  background-color: ${(props) => props.theme.primary};
   padding: 0.1rem;
 `;
 
@@ -38,18 +39,12 @@ export const Status = () => {
   return (
     <SStatus>
       <STicketStatus>
-        <STicketImg
-          src="ticket.svg"
-          alt="Ordinary Tickets"
-        ></STicketImg>
+        <STicketImg src="ticket.svg" alt="Ordinary Tickets"></STicketImg>
         <SNumber>{ordinary}</SNumber>
       </STicketStatus>
 
       <STicketStatus>
-        <STicketImg
-          src="gticket.svg"
-          alt="Golden Tickets"
-        ></STicketImg>
+        <STicketImg src="gticket.svg" alt="Golden Tickets"></STicketImg>
         <SNumber>{golden}</SNumber>
       </STicketStatus>
     </SStatus>

@@ -71,7 +71,6 @@ const AnimatedButton = (props) => {
   const timeline = anime.timeline(timelineParams);
 
   useEffect(() => {
-    console.log(targetRef);
 
     timeline.add({
       targets: targetRef.current,
