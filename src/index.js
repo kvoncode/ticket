@@ -10,7 +10,7 @@ import "normalize.css";
 const theme = {
   primary: "#fff8e6",
   secondary: "#dbdbdb",
-  tertiary: "#c28d00",
+  tertiary: "#edb726",
 };
 
 ReactDOM.render(
