@@ -1,6 +1,12 @@
 import React from "react";
 import { TicketsPage } from "./features/ticket/TicketsPage";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 import styled from "styled-components";
 import { Status } from "./features/ticket/Status";
 
@@ -46,6 +52,9 @@ function App() {
           </Route>
           <Route path="/tasks"></Route>
           <Route path="/stats"></Route>
+          <Route path="/">
+            <Redirect to="/manual"></Redirect>
+          </Route>
         </Switch>
         <Status></Status>
       </SPageTemplate>
