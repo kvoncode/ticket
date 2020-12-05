@@ -26,7 +26,7 @@ const SButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.32);
+    border: 1px solid ${(props) => props.theme.tertiary};
   }
 
   &:focus {
