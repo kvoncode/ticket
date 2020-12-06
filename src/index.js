@@ -11,6 +11,7 @@ const theme = {
   primary: "#fff8e6",
   secondary: "#dbdbdb",
   tertiary: "#6b6b6b",
+  quaternary: "white",
 };
 
 ReactDOM.render(

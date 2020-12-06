@@ -31,6 +31,7 @@ const SButton = styled.button`
 
   &:focus {
     outline: 0;
+    border: 1px solid ${(props) => props.theme.tertiary};
   }
 `;
 
@@ -65,12 +66,15 @@ const soundEffect = () => {
 const AnimatedButton = (props) => {
   const targetRef = React.createRef();
 
-  const timelineParams = { direction: "alternate", duration: 90, autoplay: false };
+  const timelineParams = {
+    direction: "alternate",
+    duration: 90,
+    autoplay: false,
+  };
 
   const timeline = anime.timeline(timelineParams);
 
   useEffect(() => {
-
     timeline.add({
       targets: targetRef.current,
       scale: 0.9,
